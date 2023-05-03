@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestService1", "TestService1\TestService1.csproj", "{560B9344-C5B7-49F4-AAA1-FD437D50B5E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateWay", "ApiGateWay\ApiGateWay.csproj", "{12FC36BD-9C1C-4352-93C1-7503B4AE5658}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{35A75CAC-C7B4-47E0-8337-2D15935C1133}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsersService", "UsersService\UsersService.csproj", "{7D60BF12-EB4C-41CA-990C-94C4BA4AD5FD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductService", "ProductService\ProductService.csproj", "{82528BCF-4D00-41FD-9F27-CBAABA2943C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductInventryService", "ProductInventryService\ProductInventryService.csproj", "{5EFC5C86-02CD-47E5-9265-6E411BF829E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{560B9344-C5B7-49F4-AAA1-FD437D50B5E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{560B9344-C5B7-49F4-AAA1-FD437D50B5E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{560B9344-C5B7-49F4-AAA1-FD437D50B5E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{560B9344-C5B7-49F4-AAA1-FD437D50B5E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12FC36BD-9C1C-4352-93C1-7503B4AE5658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12FC36BD-9C1C-4352-93C1-7503B4AE5658}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12FC36BD-9C1C-4352-93C1-7503B4AE5658}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12FC36BD-9C1C-4352-93C1-7503B4AE5658}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35A75CAC-C7B4-47E0-8337-2D15935C1133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35A75CAC-C7B4-47E0-8337-2D15935C1133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35A75CAC-C7B4-47E0-8337-2D15935C1133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35A75CAC-C7B4-47E0-8337-2D15935C1133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D60BF12-EB4C-41CA-990C-94C4BA4AD5FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D60BF12-EB4C-41CA-990C-94C4BA4AD5FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D60BF12-EB4C-41CA-990C-94C4BA4AD5FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D60BF12-EB4C-41CA-990C-94C4BA4AD5FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82528BCF-4D00-41FD-9F27-CBAABA2943C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82528BCF-4D00-41FD-9F27-CBAABA2943C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82528BCF-4D00-41FD-9F27-CBAABA2943C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82528BCF-4D00-41FD-9F27-CBAABA2943C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EFC5C86-02CD-47E5-9265-6E411BF829E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EFC5C86-02CD-47E5-9265-6E411BF829E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EFC5C86-02CD-47E5-9265-6E411BF829E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EFC5C86-02CD-47E5-9265-6E411BF829E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF0B6FDF-8A8A-4F9D-862D-01FF8EFE8E78}
+	EndGlobalSection
+EndGlobal

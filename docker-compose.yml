@@ -1,0 +1,54 @@
+version: '3.4'
+
+services:
+  apigateway:
+    image: ${DOCKER_REGISTRY-}apigateway
+    ports:
+        - "8090:80"
+    environment:
+        #- eureka__client__serviceUrl__defaultZone=
+        #-http://eureka-server:8761/eureka/
+        #- ASPNETCORE_URLS=http://+:80
+        - ASPNETCORE_ENVIRONMENT=Development
+    build:
+      context: .
+      dockerfile: ApiGateWay/Dockerfile
+    
+  testservice1:
+    image: ${DOCKER_REGISTRY-}testservice1
+    ports:
+        - "9080:80"
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+    build:
+      context: .
+      dockerfile: TestService1/Dockerfile
+  usersservice:
+    image: ${DOCKER_REGISTRY-}usersservice
+    ports:
+        - "9070:80"
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+    build:
+      context: .
+      dockerfile: UsersService/Dockerfile
+  productservice:
+    image: ${DOCKER_REGISTRY-}productservice
+    ports:
+        - "9060:80"
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+    build:
+      context: .
+      dockerfile: ProductService/Dockerfile
+  productinventryservice:
+    image: ${DOCKER_REGISTRY-}productinventryservice
+    ports:
+        - "9050:80"
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+    build:
+      context: .
+      dockerfile: ProductInventryService/Dockerfile
+ 
+  
