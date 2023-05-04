@@ -137,7 +137,7 @@
           "Port": "80"
         }
       ],
-      "UpstreamPathTemplate": "/getproduct/{id}",
+      "UpstreamPathTemplate": "/deleteproduct/{id}",
       "UpstreamHttpMethod": [ "Delete" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
@@ -147,7 +147,7 @@
         "Role": "Admin"
       }
     },
-    //---------------productservice:53638/product/addquantity---////
+    //---------------productservice:53638/addquantity-----////
     {
       "DownstreamPathTemplate": "/api/ProductInventry/addquantity",
       "DownstreamScheme": "http",
@@ -167,7 +167,7 @@
         "Role": "Admin"
       }
     },
-    //---------------productservice:53638/product/quantity---////
+    //---------------productservice:53638/updatequantity---////
     {
       "DownstreamPathTemplate": "/api/ProductInventry/updatequantity",
       "DownstreamScheme": "http",
@@ -187,7 +187,7 @@
         "Role": "Admin"
       }
     },
-    //---------------productservice:53638/product/quantity---////
+    //---------------productservice:53638/getquantity{id}---////
     {
       "DownstreamPathTemplate": "/api/ProductInventry/getquantity{id}",
       "DownstreamScheme": "http",
@@ -204,7 +204,7 @@
         "AllowedScopes": []
       }
     },
-    //---------------productservice:53638/product/quantity---////
+    //---------------productservice:53638/getproductquantity---////
     {
       "DownstreamPathTemplate": "/api/ProductInventry/getproductquantity",
       "DownstreamScheme": "http",
