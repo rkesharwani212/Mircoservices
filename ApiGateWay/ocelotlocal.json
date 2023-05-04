@@ -1,0 +1,175 @@
+{
+  {
+    "ReRoutes": [
+      //---------------productservice:32965/getproduct---////
+      {
+        "DownstreamPathTemplate": "/api/product/getproduct",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": "32965"
+          }
+        ],
+        "UpstreamPathTemplate": "/getproduct",
+        "UpstreamHttpMethod": [ "Get" ],
+        "Key": "products",
+        "AuthenticationOptions": {
+          "AuthenticationProviderKey": "Bearer",
+          "AllowedScopes": []
+        }
+      },
+      //---------------productservice:32965/getproduct/id---////
+      {
+        "DownstreamPathTemplate": "/api/product/getproduct/{id}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": "32965"
+          }
+        ],
+        "UpstreamPathTemplate": "/getproduct/{id}",
+        "UpstreamHttpMethod": [ "Get" ],
+        "AuthenticationOptions": {
+          "AuthenticationProviderKey": "Bearer",
+          "AllowedScopes": []
+        }
+      },
+      //---------------productservice:32965/addproduct---////
+      {
+        "DownstreamPathTemplate": "/api/product/addproduct",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": "32965"
+          }
+        ],
+        "UpstreamPathTemplate": "/addproduct",
+        "UpstreamHttpMethod": [ "Post" ],
+        "AuthenticationOptions": {
+          "AuthenticationProviderKey": "Bearer",
+          "AllowedScopes": []
+        },
+        "ReRoutesClaimsRequirement": {
+          "Role": "Admin"
+        }
+      },
+      //---------------productservice:32965/product/deleteproduct/id---////
+      {
+        "DownstreamPathTemplate": "/api/product/deleteproduct/{id}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": "32965"
+          }
+        ],
+        "UpstreamPathTemplate": "/deleteproduct/{id}",
+        "UpstreamHttpMethod": [ "Delete" ],
+        "AuthenticationOptions": {
+          "AuthenticationProviderKey": "Bearer",
+          "AllowedScopes": []
+        },
+        "ReRoutesClaimsRequirement": {
+          "Role": "Admin"
+        }
+      },
+      //---------------productservice:53638/product/addquantity---////
+      {
+        "DownstreamPathTemplate": "/api/ProductInventry/addquantity",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": "53638"
+          }
+        ],
+        "UpstreamPathTemplate": "/addquantity",
+        "UpstreamHttpMethod": [ "Post" ],
+        "AuthenticationOptions": {
+          "AuthenticationProviderKey": "Bearer",
+          "AllowedScopes": []
+        },
+        "ReRoutesClaimsRequirement": {
+          "Role": "Admin"
+        }
+      },
+      //---------------productservice:53638/product/quantity---////
+      {
+        "DownstreamPathTemplate": "/api/ProductInventry/getquantity{id}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": "53638"
+          }
+        ],
+        "UpstreamPathTemplate": "/getquantity{id}",
+        "UpstreamHttpMethod": [ "Get" ],
+        "AuthenticationOptions": {
+          "AuthenticationProviderKey": "Bearer",
+          "AllowedScopes": []
+        }
+      },
+      //---------------productservice:53638/product/quantity---////
+      {
+        "DownstreamPathTemplate": "/api/ProductInventry/getproductquantity",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": "53638"
+          }
+        ],
+        "UpstreamPathTemplate": "/getproductquantity",
+        "UpstreamHttpMethod": [ "Get" ],
+        "Key": "quantities",
+        "AuthenticationOptions": {
+          "AuthenticationProviderKey": "Bearer",
+          "AllowedScopes": []
+        }
+      },
+      //---------------usersservice:9118/auth/login-////
+      {
+        "DownstreamPathTemplate": "/api/auth/Account/Login",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": "9118"
+          }
+        ],
+        "UpstreamPathTemplate": "/auth/login",
+        "UpstreamHttpMethod": [ "Post" ]
+      },
+      //---------------usersservice:9118/auth/sign-////
+      {
+        "DownstreamPathTemplate": "/api/auth/Account/Signup",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": "9118"
+          }
+        ],
+        "UpstreamPathTemplate": "/auth/signup",
+        "UpstreamHttpMethod": [ "Post" ]
+      }
+    ],
+    "Aggregates": [
+      {
+        "ReRouteKeys": [
+          "products",
+          "quantities"
+        ],
+        "UpstreamPathTemplate": "/productsinventery"
+      }
+    ],
+    "GlobalConfiguration": {
+      "BaseUrl": "http://localhost:8090/"
+    }
+  }
+
+}
