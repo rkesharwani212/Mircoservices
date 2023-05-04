@@ -1,1 +1,57 @@
 # Mircoservices
+1) Product service 
+	model- name, size, price, design
+	this service is performs crud operation (+ get by id)
+2) product inventry
+	model -id, quantity
+	this service will take id and quantity to add the quantity and fetch it.
+3) user service 
+	this service is for user login and signup authentication
+	for signup model - FirstName, LastName, Email, Role, ConfirmPassword, Password
+	for login model email, password
+4) test service 
+	please ignore this service created for testing purpose.
+
+
+assumptions: user need to login first to access any end point of product for some end point admin role is required that is mentioned with the api's below
+-----------in docker using postman---------------------
+-------added one used by default------------
+	Email : "admin@gmail.com"
+	Password : "Admin1@123"
+-------with Admin role----------------------
+for signup 
+	http://localhost:8090/auth/signup 
+		(method type post) 
+		(method body "FirstName, LastName, Email, Role, ConfirmPassword, Password" provide these in json)
+for login in docker using postman
+	http://localhost:8090/auth/login
+		(method type post)
+		(method body "Email, Password")
+for product ----(authentication bearer)------------
+	1) to create product or to add
+	http://localhost:8090/addproduct [Post]
+		(Role = Admin only)
+		(method body = name, size, price, design)
+
+	2) to get all product
+	http://localhost:8090/getproduct [Get]
+
+	3) to get product by Id
+	http://localhost:8090/getproduct/id [Get]
+	
+	4) to delete product
+	http://localhost:8090/getproduct/id [Delete]
+for product inventry service ----(authentication bearer)------------
+	1) to add product Quantity
+	http://localhost:8090/addquantity [Post]
+		(Role = Admin only)
+		(method body = id(productid), quantity)
+
+	2) to get all product quantity
+	http://localhost:8090/getproductquantity [Get]
+
+	3) to get product quantity by product Id
+	http://localhost:8090/getquantity/id [Get]
+
+	
+
