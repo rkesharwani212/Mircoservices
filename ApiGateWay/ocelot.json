@@ -1,58 +1,5 @@
 {
   "ReRoutes": [
-    {
-      //---------------testservice:44351/api/values--////
-      "DownstreamPathTemplate": "/api/Values",
-      "DownstreamScheme": "http",
-      //"ServiceName": "testservice1",
-      //"ServiceId": "TestService1-API",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "testservice1",
-          "Port": "80"
-        }
-      ],
-      "UpstreamPathTemplate": "/user",
-      "UpstreamHttpMethod": [ "Get" ],
-      "Key": "user",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      }
-    },
-    //---------------testservice:44351/weatherforecast-////
-    {
-      "DownstreamPathTemplate": "/weatherforecast",
-      "DownstreamScheme": "http",
-      //"ServiceName": "testservice1",
-      //"ServiceId": "TestService1-API",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "testservice1",
-          "Port": "80"
-        }
-      ],
-      "UpstreamPathTemplate": "/weather",
-      "UpstreamHttpMethod": [ "Get" ],
-      "Key": "weather"
-    },
-    //---------------testservice:44351/api/value/id---////
-    {
-      "DownstreamPathTemplate": "/api/Values/{id}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "testservice1",
-          "Port": "80"
-        }
-      ],
-      "UpstreamPathTemplate": "/user/{id}",
-      "UpstreamHttpMethod": [ "Get" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      }
-    },
     //---------------productservice:32965/getproduct---////
     {
       "DownstreamPathTemplate": "/api/product/getproduct",
@@ -65,6 +12,7 @@
       ],
       "UpstreamPathTemplate": "/getproduct",
       "UpstreamHttpMethod": [ "Get" ],
+      "Key": "products",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -107,26 +55,6 @@
         "Role": "Admin"
       }
     },
-    //---------------productservice:32965/updateproduct---////
-    {
-      "DownstreamPathTemplate": "/api/product/updateproduct",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "productservice",
-          "Port": "80"
-        }
-      ],
-      "UpstreamPathTemplate": "/updateproduct",
-      "UpstreamHttpMethod": [ "Put" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      },
-      "ReRoutesClaimsRequirement": {
-        "Role": "Admin"
-      }
-    },
     //---------------productservice:32965/product/deleteproduct/id---////
     {
       "DownstreamPathTemplate": "/api/product/deleteproduct/{id}",
@@ -147,7 +75,7 @@
         "Role": "Admin"
       }
     },
-    //---------------productservice:53638/addquantity-----////
+    //---------------productservice:53638/product/addquantity---////
     {
       "DownstreamPathTemplate": "/api/ProductInventry/addquantity",
       "DownstreamScheme": "http",
@@ -167,27 +95,7 @@
         "Role": "Admin"
       }
     },
-    //---------------productservice:53638/updatequantity---////
-    {
-      "DownstreamPathTemplate": "/api/ProductInventry/updatequantity",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "productinventryservice",
-          "Port": "80"
-        }
-      ],
-      "UpstreamPathTemplate": "/updatequantity",
-      "UpstreamHttpMethod": [ "Put" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      },
-      "ReRoutesClaimsRequirement": {
-        "Role": "Admin"
-      }
-    },
-    //---------------productservice:53638/getquantity{id}---////
+    //---------------productservice:53638/product/quantity---////
     {
       "DownstreamPathTemplate": "/api/ProductInventry/getquantity{id}",
       "DownstreamScheme": "http",
@@ -204,7 +112,7 @@
         "AllowedScopes": []
       }
     },
-    //---------------productservice:53638/getproductquantity---////
+    //---------------productservice:53638/product/quantity---////
     {
       "DownstreamPathTemplate": "/api/ProductInventry/getproductquantity",
       "DownstreamScheme": "http",
@@ -216,6 +124,7 @@
       ],
       "UpstreamPathTemplate": "/getproductquantity",
       "UpstreamHttpMethod": [ "Get" ],
+      "Key": "quantities",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -251,21 +160,13 @@
   "Aggregates": [
     {
       "ReRouteKeys": [
-        "user",
-        "weather"
+        "products",
+        "quantities"
       ],
-      "UpstreamPathTemplate": "/combine"
+      "UpstreamPathTemplate": "/productsinventery"
     }
   ],
   "GlobalConfiguration": {
-    //"RequestIdKey": "OcRequestId",
-    //"AdministrationPath": "/administration",
-    //"UseServiceDiscovery": true,
-    //"ServiceDiscoveryProvider": {
-    //  "Type": "Eureka",
-    //  "Host": "localhost",
-    //  "Port": "8761"
-    //},
     "BaseUrl": "http://localhost:8090/"
   }
 }
