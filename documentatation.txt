@@ -12,7 +12,9 @@
 4) test service 
 	please ignore this service created for testing purpose.
 
-
+---------docker hub link--------------------------------------
+https://hub.docker.com/layers/rkesharwani212/microservices/latest/images/sha256-9ad9d41d29abb8ecf485bb72dfdbba5a32b0acefe4739a4b5b4040c85e693f3f?context=repo
+---------------------------------------------------------------
 assumptions: user need to login first to access any end point of product for some end point admin role is required that is mentioned with the api's below
 -----------in docker using postman---------------------
 -------added one used by default------------
@@ -40,7 +42,8 @@ for product ----(authentication bearer)------------
 	http://localhost:8090/getproduct/id [Get]
 	
 	4) to delete product
-	http://localhost:8090/getproduct/id [Delete]
+	http://localhost:8090/deleteproduct/id [Delete]
+		(Role = Admin only)
 for product inventry service ----(authentication bearer)------------
 	1) to add product Quantity
 	http://localhost:8090/addquantity [Post]
@@ -52,6 +55,22 @@ for product inventry service ----(authentication bearer)------------
 
 	3) to get product quantity by product Id
 	http://localhost:8090/getquantity/id [Get]
+for product and inventry combine fetch
+	1)http://localhost:8090/productsinventery [Get]
+--------to run on local use ocelotlocal.json in place of ocelot-------------------
+--------use 44323 in place of 8090 with above mentioned api's to run in local-----
 
-	
+////////////End Points Without Using Ocelot////////////////----authetication bearer----------
+///////////for product service////////////////////////////
+1) http://localhost:32965/api/product/getproduct  [Get]
+2) http://localhost:32965/api/product/getproduct/{id} [Get]
+3) http://localhost:32965/api/product/addproduct [Post] (admin only)
+4) http://localhost:32965/api/product/deleteproduct/{id} [Delete] (admin only)
+//////////for product inventry service////////////////////
+5) http://localhost:53638/api/ProductInventry/getquantity{id}  [Get]
+6) http://localhost:53638/api/ProductInventry/addquantity [Post] (admin only)
+7) http://localhost:53638/api/ProductInventry/getproductquantity [Get]
+///////////////////For User Service///////////////////////////////
+8) http://localhost:9118/api/auth/Account/Login [Post]
+9) http://localhost:9118/api/auth/Account/Signup [Post]
 
